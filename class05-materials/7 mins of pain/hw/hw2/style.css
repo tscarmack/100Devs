@@ -1,0 +1,40 @@
+*{
+    box-sizing: border-box;
+}
+header, footer{
+    border: 1px solid grey;
+    clear: both;
+    height: 100px;
+}
+section{
+    border: 1px solid grey;
+    height: 200px;
+    float: left;
+    width: 100%;
+}
+#chapstick{
+    height: 300px;
+    width: 33.3333%;
+    float: left;
+}
+#pig{
+    height: 300px;
+    float: left;
+    width: 66.6666%;
+}
+@media screen and (max-width: 800px){
+    #chapstick{
+        background: rgb(0, 0, 0);
+    }
+}
+@media (min-width:801px) and (max-width: 900px){
+    #pig{
+        border: dotted 10px red;
+    }
+    
+}
+@media (min-width:901px) and (max-width:2000px){
+    header, footer{
+        border: 30px inset lightcoral;
+    }
+}
