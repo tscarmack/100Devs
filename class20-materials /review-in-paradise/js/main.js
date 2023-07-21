@@ -23,16 +23,16 @@ singleNum(11)
 //Create a function that takes in a month. If it is a summer month alert "YAY". If another other month, alert "Booo"
 
 function month(mon){
-    if(mon === 'June' || 'July' || 'August'){
+    if(mon === 'June' || mon === 'July' || mon === 'August'){
         alert('YAY')
     }else{
         alert('Booo')
     }
 }
 month('sep')
-// THIS DIDNT WORK^^
+// or:
 const month2 = mon => mon === 'June' || 'July' || 'August' ? alert('YAY') : alert('Booo')
-month2('August')
+month2('sep')
 //*Loops*
 //Create a function that takes in a number. Console log every number from 1 to that number while skipping multiples of 5.
 function loop(num){
