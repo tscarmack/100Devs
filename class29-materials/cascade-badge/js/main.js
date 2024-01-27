@@ -36,7 +36,13 @@ function multipleOfIndex(arr){
         }})
     console.log(newArr)
 }
+
+function isMultiple(arr){
+    return arr.filter((e,i ) => e % i ===0)
+}
+
 multipleOfIndex([68, -1, 1, -7, 10, 10])
+isMultiple([68, -1, 1, -7, 10, 10])
 
 //Given an array of integers as strings and numbers, return the sum of the array values as if all were numbers.Return your answer as a number.
 
@@ -46,3 +52,11 @@ function sumOfStringAndNumbers(arr){
     console.log(sum)
 }
 sumOfStringAndNumbers([2,2,2,2,'12','15','23'])
+
+
+
+function sumOfValues(arr){
+    return arr.reduce((acc, c) => acc + Number(c), 0)
+}
+
+console.log(sumOfValues(['5', 2, '3', 6]))
