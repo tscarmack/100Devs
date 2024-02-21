@@ -1,6 +1,6 @@
 
 const { MongoClient, ServerApiVersion } = require('mongodb');
-const uri = "mongodb+srv://trevor:<password>@star-wars.415j06y.mongodb.net/?retryWrites=true&w=majority";
+const uri = "mongodb+srv://trevor:tctrevor@star-wars.415j06y.mongodb.net/?retryWrites=true&w=majority";
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {
@@ -8,6 +8,7 @@ const client = new MongoClient(uri, {
     version: ServerApiVersion.v1,
     strict: true,
     deprecationErrors: true,
+    
   }
 });
 
@@ -36,20 +37,23 @@ run().catch(console.dir);
 
 
 
-console.log('May Node be with you')
+// console.log('May Node be with you')
 
 const express = require('express')
 const app = express()
-const bodyParser = require('body-parser')
-const MongoClient = require('mongodb').MongoClient
+  const db = client.db('star-wars-quotes')
+    const quotesCollection = db.collection('quotes')
+// const bodyParser = require('body-parser')
+// const MongoClient = require('mongodb').MongoClient
 
-app.use(bodyParser.urlencoded({ extended: true }))
+
+// app.use(bodyParser.urlencoded({ extended: true }))
 
 app.listen(3000, function () {
   console.log('listening on 3000')
 })
 
-app.use(bodyParser.urlencoded({ extended: true }))
+// app.use(bodyParser.urlencoded({ extended: true }))
 
 app.get('/', (req, res) => {
     res.sendFile('/Users/trevorcarmack/coding/100Devs/class36-materials/Node HW' + '/index.html')
@@ -58,17 +62,16 @@ app.get('/', (req, res) => {
 
 
 
-MongoClient.connect('mongodb+srv://trevor:tctrevor@star-wars.415j06y.mongodb.net/?retryWrites=true&w=majority',)
-  .then(client => {
-    console.log('Connected to Database')
-    const db = client.db('star-wars-quotes')
-    const quotesCollection = db.collection('quotes')
-    app.use(/* ... */)
-    app.get(/* ... */)
-    app.post(/* ... */)
-    app.listen(/* ... */)
-  })
-.catch(error => console.error(error))
+// MongoClient.connect('mongodb+srv://trevor:tctrevor@star-wars.415j06y.mongodb.net/?retryWrites=true&w=majority',)
+//   .then(client => {
+//     console.log('Connected to Database')
+  
+//     app.use(/* ... */)
+//     app.get(/* ... */)
+//     app.post(/* ... */)
+//     app.listen(/* ... */)
+//   })
+// .catch(error => console.error(error))
 
 
 app.post('/quotes', (req, res) => {
